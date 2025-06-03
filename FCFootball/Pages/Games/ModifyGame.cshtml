@@ -1,0 +1,69 @@
+﻿@page
+@model FCFootball.Pages.Games.ModifyGameModel
+@{
+}
+
+<h1>Modify Game</h1>
+
+<label>Message:</label>
+<label style="color: @Model.MessageColor">@Model.Message</label>
+
+<br />
+<br />
+
+<form method="post">
+
+	<input asp-for="Game.GameID" type="hidden" />
+
+	<table>
+
+		<tr>
+			<td><label asp-for="Game.Opponent">Opponent:</label></td>
+			<td><input asp-for="Game.Opponent" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="Game.Date">Date:</label></td>
+			<td><input asp-for="Game.Date" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="Game.Home">Location:</label></td>
+
+			<td>
+				<input asp-for="Game.Home" checked type="radio"
+					   value="True" /> Home
+
+				&nbsp;&nbsp;
+
+				<input asp-for="Game.Home" type="radio"
+					   value="False" /> Away
+			</td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="Game.Result">Result:</label></td>
+			<td><input asp-for="Game.Result" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="Game.TeamScore">Griz Score:</label></td>
+			<td><input asp-for="Game.TeamScore" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="Game.OpponentScore">Opponent Score:</label></td>
+			<td><input asp-for="Game.OpponentScore" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td>
+				<input asp-page-handler="Modify" type="submit" class="btn btn-submit form-control w-100" value="Modify Game" />
+				<a asp-page="CancelGame">Cancel</a>
+			</td>
+		</tr>
+
+	</table>
+
+</form>

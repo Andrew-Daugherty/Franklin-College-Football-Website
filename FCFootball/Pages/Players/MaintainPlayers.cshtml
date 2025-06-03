@@ -1,0 +1,67 @@
+﻿@page
+@model FCFootball.Pages.Players.MaintainPlayersModel
+@{
+    var isLoggedIn = ViewContext.HttpContext.Session.GetString("LoggedIn") == "true";
+ }
+
+<h1>Roster</h1>
+
+@if (isLoggedIn)
+{
+<label>Message:</label>
+<label style="color: @Model.MessageColor">@Model.Message</label>
+}
+
+<br />
+
+<table class="table">
+    <thead>
+        <tr>
+            @if (isLoggedIn)
+            {
+                <td><a asp-page="AddPlayer" class="btn btn-maintain btn-add">Add</a></td>
+            }
+            <th><label>No.</label></th>
+            <th><label>Name</label></th>
+            <th><label>Height</label></th>
+            <th><label>Weight</label></th>
+            <th><label>Position</label></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ResultIList)
+        {
+            <tr>
+
+                @if (isLoggedIn)
+                {
+
+                <td>
+                    <a asp-page="ModifyPlayer" asp-route-intPlayerID="@item.PlayerID" class="btn btn-maintain btn-modify">Modify</a>
+                        <a asp-page="DeletePlayer" asp-route-intPlayerID="@item.PlayerID" class="btn btn-maintain btn-delete" onclick="return confirm('Are you sure you want to delete this item? Click OK to delete it. Click Cancel to keep it.')">Delete</a>
+                </td>
+
+                }
+                <td>
+                    <label>#@item.Number</label>
+                </td>
+                
+                <td>
+                    <img src="~/images/@item.Image" class="player-image" alt="Player Image" />
+                    <label>@item.FirstName</label >
+                    <label>@item.LastName</label>
+                </td>
+
+            <td>
+                    <label>@item.Height</label>
+            </td>
+            <td>
+                    <label>@item.Weight</label>
+            </td>
+                <td>
+                    <label>@item.Position</label>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

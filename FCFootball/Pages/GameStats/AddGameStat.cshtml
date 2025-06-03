@@ -1,0 +1,79 @@
+﻿@page
+@model FCFootball.Pages.GameStats.AddGameStatModel
+@{
+}
+
+<h1>Add Game Statistics</h1>
+
+<label>Message:</label>
+<label style="color: @Model.MessageColor">@Model.Message</label>
+
+<br /><br />
+
+<form method="post">
+
+	<table>
+
+		<td><label>Opponent:</label></td>
+		<td>
+			<select asp-for="GameID" asp-items="Model.OpponentSelectList" class="form-control">
+				<option value="">-- Select Opponent --</option>
+			</select>
+		</td>
+
+		<tr>
+			<td><label asp-for="GameStat.PassAtt">PassAtt:</label></td>
+			<td><input asp-for="GameStat.PassAtt" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="GameStat.PassComp">PassComp:</label></td>
+			<td><input asp-for="GameStat.PassComp" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="GameStat.PassYds">PassYds:</label></td>
+			<td><input asp-for="GameStat.PassYds" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="GameStat.PassTd">PassTd:</label></td>
+			<td><input asp-for="GameStat.PassTd" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="GameStat.RushAtt">RushAtt:</label></td>
+			<td><input asp-for="GameStat.RushAtt" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="GameStat.RushYds">RushYds:</label></td>
+			<td><input asp-for="GameStat.RushYds" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="GameStat.RushTd">RushTd:</label></td>
+			<td><input asp-for="GameStat.RushTd" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="GameStat.RecYds">RecYds:</label></td>
+			<td><input asp-for="GameStat.RecYds" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="GameStat.RecTd">RecTd:</label></td>
+			<td><input asp-for="GameStat.RecTd" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td>
+				<input asp-page-handler="Add" type="submit" class="btn btn-submit form-control w-100" value="Add Statistics" />
+				<a asp-page="CancelGameStat">Cancel</a>
+			</td>
+		</tr>
+
+	</table>
+
+</form>

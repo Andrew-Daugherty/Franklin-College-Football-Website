@@ -1,0 +1,57 @@
+﻿@page
+@model FCFootball.Pages.Staff.AddStaffModel
+@{
+}
+
+<h1>Add Staff</h1>
+
+<label>Message:</label>
+<label style="color: @Model.MessageColor">@Model.Message</label>
+
+<br /><br />
+
+<form method="post" enctype="multipart/form-data">
+
+	<table>
+
+		<tr>
+			<td><label asp-for="Staff.FirstName">First Name:</label></td>
+			<td><input asp-for="Staff.FirstName" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="Staff.LastName">Last Name:</label></td>
+			<td><input asp-for="Staff.LastName" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="Staff.Role">Role:</label></td>
+			<td><input asp-for="Staff.Role" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="Staff.EmailAddress">Email Address:</label></td>
+			<td><input asp-for="Staff.EmailAddress" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="Staff.Password">Password:</label></td>
+			<td><input type="password" asp-for="Staff.Password" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="StaffImage">Image:</label></td>
+			<td><input asp-for="StaffImage" type="file" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td>
+				<input asp-page-handler="Add" type="submit" class="btn btn-submit form-control w-100" value="Add Staff" />
+				<a asp-page="CancelStaff">Cancel</a>
+			</td>
+		</tr>
+
+	</table>
+
+</form>

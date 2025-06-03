@@ -1,0 +1,107 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+form td {       /* Spacing for input fields */
+    padding-bottom: 12px;
+    padding-right: 10px;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: auto;
+}
+
+    table td, table th {
+        padding: 4px 8px; /* You can adjust this */
+        white-space: nowrap; /* Prevents wrapping if that's okay */
+    }
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+.btn-submit {
+    width: 270px;
+    height: 38px;
+    background-color: #ffc72c; /* Franklin gold */
+    color: #002147; /* Franklin navy */
+    border: none;
+    padding: 10px 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+    .btn-submit:hover {
+        background-color: #e6b800;
+        color: #00122e;
+    }
+
+.btn-maintain {
+    width: 100px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+    text-align: center;
+    display: inline-block;
+    padding-top: 8px; /* vertically center text */
+}
+
+
+.btn-add {
+    background-color: green;
+    color: white;
+}
+
+/* Modify button (yellow) */
+.btn-modify {
+    background-color: #ffc72c; /* Franklin gold */
+    color: #001f3f; /* Franklin Navy */
+}
+
+/* Delete button (red) */
+.btn-delete {
+    background-color: red;
+    color: white;
+}
+
+.player-image {
+    width: 35px; /* Makes the image smaller */
+    height: 35px; /* Forces a square aspect ratio */
+    border-radius: 50%; /* Rounds it into a circle */
+    object-fit: scale-down; /* Ensures the image fills the circle without distortion */
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.navbar {
+    background-color: #001f3f !important; /* Franklin Navy */
+}
+
+    .navbar .nav-link,
+    .navbar .navbar-brand {
+        color: white !important;
+    }
+
+        .navbar .nav-link:hover,
+        .navbar .navbar-brand:hover {
+            color: #cccccc !important; /* Light Gray */
+        }
+
+.nav-links {
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

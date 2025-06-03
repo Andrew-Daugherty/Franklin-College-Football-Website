@@ -1,0 +1,98 @@
+﻿@page
+@model FCFootball.Pages.PlayerStats.ModifyPlayerStatModel
+@{
+}
+
+<h1>Modify Player Statistics</h1>
+
+<label>Message:</label>
+<label style="color: @Model.MessageColor">@Model.Message</label>
+
+<br />
+<br />
+
+<form method="post">
+
+	<input asp-for="PlayerStat.PlayerStatID" type="hidden" />
+
+	<table>
+
+		<tr>
+			<td><label>Player:</label></td>
+			<td>
+				<select asp-for="PlayerStat.PlayerID" asp-items="Model.PlayerSelectList" class="form-control">
+					@* <option value="">-- Select Player --</option> *@
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+			<td><label>Opponent:</label></td>
+			<td>
+				<select asp-for="PlayerStat.GameID" asp-items="Model.OpponentSelectList" class="form-control">
+					@* <option value="">-- Select Opponent --</option> *@
+				</select>
+			</td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="PlayerStat.PassAtt">PassAtt:</label></td>
+			<td><input asp-for="PlayerStat.PassAtt" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="PlayerStat.PassComp">PassComp:</label></td>
+			<td><input asp-for="PlayerStat.PassComp" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="PlayerStat.PassYds">PassYds:</label></td>
+			<td><input asp-for="PlayerStat.PassYds" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="PlayerStat.PassTd">PassTd:</label></td>
+			<td><input asp-for="PlayerStat.PassTd" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="PlayerStat.RushAtt">RushAtt:</label></td>
+			<td><input asp-for="PlayerStat.RushAtt" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="PlayerStat.RushYds">RushYds:</label></td>
+			<td><input asp-for="PlayerStat.RushYds" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="PlayerStat.RushTd">RushTd:</label></td>
+			<td><input asp-for="PlayerStat.RushTd" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="PlayerStat.Receptions">Receptions:</label></td>
+			<td><input asp-for="PlayerStat.Receptions" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="PlayerStat.RecYds">RecYds:</label></td>
+			<td><input asp-for="PlayerStat.RecYds" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td><label asp-for="PlayerStat.RecTd">RecTd:</label></td>
+			<td><input asp-for="PlayerStat.RecTd" class="form-control" /></td>
+		</tr>
+
+		<tr>
+			<td></td>
+			<td>
+				<input asp-page-handler="Modify" type="submit" class="btn btn-submit form-control w-100" value="Modify Statistics" />
+				<a asp-page="CancelPlayerStat">Cancel</a>
+			</td>
+		</tr>
+
+	</table>
+
+</form>
